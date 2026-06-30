@@ -128,7 +128,24 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <Outlet />
       {mounted && (
-        <FlowEngageProvider siteId="2668985f-e399-4355-8889-8913044e452c">
+        <FlowEngageProvider
+          siteId="2668985f-e399-4355-8889-8913044e452c"
+          language="de"
+          config={{
+            widgetSettings: {
+              branding: {
+                entryPrompt: "Kann ich Ihnen helfen?",
+                yesLabel: "Ja",
+                laterLabel: "Später",
+                connectionTitle: "Wie möchten Sie sich verbinden?",
+                voiceLabel: "Sprachanruf",
+                textLabel: "Chat",
+                inputPlaceholder: "Nachricht eingeben...",
+                analysingLabel: "Analysiere...",
+              },
+            },
+          }}
+        >
           <FlowEngageWidget />
         </FlowEngageProvider>
       )}
